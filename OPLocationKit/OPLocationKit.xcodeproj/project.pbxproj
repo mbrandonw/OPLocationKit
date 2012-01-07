@@ -1,0 +1,309 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A706D53414B90EB000B469BB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A706D53314B90EB000B469BB /* UIKit.framework */; };
+		A706D53614B90EB000B469BB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A706D53514B90EB000B469BB /* Foundation.framework */; };
+		A706D53814B90EB000B469BB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A706D53714B90EB000B469BB /* CoreGraphics.framework */; };
+		A706D55714B90F5900B469BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D55014B90F5900B469BB /* main.m */; };
+		A706D55814B90F5900B469BB /* OPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D55214B90F5900B469BB /* OPAppDelegate.m */; };
+		A706D55914B90F5900B469BB /* OPLocationKit-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A706D55314B90F5900B469BB /* OPLocationKit-Info.plist */; };
+		A706D55A14B90F5900B469BB /* OPLocationKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = A706D55614B90F5900B469BB /* OPLocationKit.podspec */; };
+		A706D56914B9100500B469BB /* OPFoursquareVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D55E14B9100500B469BB /* OPFoursquareVenue.m */; };
+		A706D56A14B9100500B469BB /* OPFoursquareVenueLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D56014B9100500B469BB /* OPFoursquareVenueLocation.m */; };
+		A706D56B14B9100500B469BB /* OPGoogleGeocodeAddressComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D56214B9100500B469BB /* OPGoogleGeocodeAddressComponent.m */; };
+		A706D56C14B9100500B469BB /* OPGoogleGeocodeResult.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D56414B9100500B469BB /* OPGoogleGeocodeResult.m */; };
+		A706D56D14B9100500B469BB /* OPGoogleGeocodeResultGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D56614B9100500B469BB /* OPGoogleGeocodeResultGeometry.m */; };
+		A706D56E14B9100500B469BB /* OPLocationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D56814B9100500B469BB /* OPLocationCenter.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A706D52F14B90EB000B469BB /* OPLocationKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OPLocationKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A706D53314B90EB000B469BB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A706D53514B90EB000B469BB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A706D53714B90EB000B469BB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A706D55014B90F5900B469BB /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A706D55114B90F5900B469BB /* OPAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPAppDelegate.h; sourceTree = "<group>"; };
+		A706D55214B90F5900B469BB /* OPAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPAppDelegate.m; sourceTree = "<group>"; };
+		A706D55314B90F5900B469BB /* OPLocationKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "OPLocationKit-Info.plist"; sourceTree = "<group>"; };
+		A706D55414B90F5900B469BB /* OPLocationKit-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OPLocationKit-Prefix.pch"; sourceTree = "<group>"; };
+		A706D55614B90F5900B469BB /* OPLocationKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OPLocationKit.podspec; sourceTree = SOURCE_ROOT; };
+		A706D55D14B9100500B469BB /* OPFoursquareVenue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPFoursquareVenue.h; sourceTree = "<group>"; };
+		A706D55E14B9100500B469BB /* OPFoursquareVenue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPFoursquareVenue.m; sourceTree = "<group>"; };
+		A706D55F14B9100500B469BB /* OPFoursquareVenueLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPFoursquareVenueLocation.h; sourceTree = "<group>"; };
+		A706D56014B9100500B469BB /* OPFoursquareVenueLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPFoursquareVenueLocation.m; sourceTree = "<group>"; };
+		A706D56114B9100500B469BB /* OPGoogleGeocodeAddressComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPGoogleGeocodeAddressComponent.h; sourceTree = "<group>"; };
+		A706D56214B9100500B469BB /* OPGoogleGeocodeAddressComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPGoogleGeocodeAddressComponent.m; sourceTree = "<group>"; };
+		A706D56314B9100500B469BB /* OPGoogleGeocodeResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPGoogleGeocodeResult.h; sourceTree = "<group>"; };
+		A706D56414B9100500B469BB /* OPGoogleGeocodeResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPGoogleGeocodeResult.m; sourceTree = "<group>"; };
+		A706D56514B9100500B469BB /* OPGoogleGeocodeResultGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPGoogleGeocodeResultGeometry.h; sourceTree = "<group>"; };
+		A706D56614B9100500B469BB /* OPGoogleGeocodeResultGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPGoogleGeocodeResultGeometry.m; sourceTree = "<group>"; };
+		A706D56714B9100500B469BB /* OPLocationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPLocationCenter.h; sourceTree = "<group>"; };
+		A706D56814B9100500B469BB /* OPLocationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPLocationCenter.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A706D52C14B90EB000B469BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A706D53414B90EB000B469BB /* UIKit.framework in Frameworks */,
+				A706D53614B90EB000B469BB /* Foundation.framework in Frameworks */,
+				A706D53814B90EB000B469BB /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A706D52414B90EB000B469BB = {
+			isa = PBXGroup;
+			children = (
+				A706D54F14B90F5900B469BB /* OPLocationKit */,
+				A706D55514B90F5900B469BB /* OPLocationKitTests */,
+				A706D53214B90EB000B469BB /* Frameworks */,
+				A706D53014B90EB000B469BB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A706D53014B90EB000B469BB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A706D52F14B90EB000B469BB /* OPLocationKit.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A706D53214B90EB000B469BB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A706D53314B90EB000B469BB /* UIKit.framework */,
+				A706D53514B90EB000B469BB /* Foundation.framework */,
+				A706D53714B90EB000B469BB /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A706D54F14B90F5900B469BB /* OPLocationKit */ = {
+			isa = PBXGroup;
+			children = (
+				A706D55C14B90F8B00B469BB /* Source */,
+				A706D55B14B90F6C00B469BB /* Supporting Files */,
+			);
+			path = OPLocationKit;
+			sourceTree = "<group>";
+		};
+		A706D55514B90F5900B469BB /* OPLocationKitTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = OPLocationKitTests;
+			sourceTree = "<group>";
+		};
+		A706D55B14B90F6C00B469BB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A706D55614B90F5900B469BB /* OPLocationKit.podspec */,
+				A706D55014B90F5900B469BB /* main.m */,
+				A706D55114B90F5900B469BB /* OPAppDelegate.h */,
+				A706D55214B90F5900B469BB /* OPAppDelegate.m */,
+				A706D55314B90F5900B469BB /* OPLocationKit-Info.plist */,
+				A706D55414B90F5900B469BB /* OPLocationKit-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A706D55C14B90F8B00B469BB /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				A706D55D14B9100500B469BB /* OPFoursquareVenue.h */,
+				A706D55E14B9100500B469BB /* OPFoursquareVenue.m */,
+				A706D55F14B9100500B469BB /* OPFoursquareVenueLocation.h */,
+				A706D56014B9100500B469BB /* OPFoursquareVenueLocation.m */,
+				A706D56114B9100500B469BB /* OPGoogleGeocodeAddressComponent.h */,
+				A706D56214B9100500B469BB /* OPGoogleGeocodeAddressComponent.m */,
+				A706D56314B9100500B469BB /* OPGoogleGeocodeResult.h */,
+				A706D56414B9100500B469BB /* OPGoogleGeocodeResult.m */,
+				A706D56514B9100500B469BB /* OPGoogleGeocodeResultGeometry.h */,
+				A706D56614B9100500B469BB /* OPGoogleGeocodeResultGeometry.m */,
+				A706D56714B9100500B469BB /* OPLocationCenter.h */,
+				A706D56814B9100500B469BB /* OPLocationCenter.m */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A706D52E14B90EB000B469BB /* OPLocationKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A706D54714B90EB000B469BB /* Build configuration list for PBXNativeTarget "OPLocationKit" */;
+			buildPhases = (
+				A706D52B14B90EB000B469BB /* Sources */,
+				A706D52C14B90EB000B469BB /* Frameworks */,
+				A706D52D14B90EB000B469BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OPLocationKit;
+			productName = OPLocationKit;
+			productReference = A706D52F14B90EB000B469BB /* OPLocationKit.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A706D52614B90EB000B469BB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = A706D52914B90EB000B469BB /* Build configuration list for PBXProject "OPLocationKit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A706D52414B90EB000B469BB;
+			productRefGroup = A706D53014B90EB000B469BB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A706D52E14B90EB000B469BB /* OPLocationKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A706D52D14B90EB000B469BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A706D55914B90F5900B469BB /* OPLocationKit-Info.plist in Resources */,
+				A706D55A14B90F5900B469BB /* OPLocationKit.podspec in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A706D52B14B90EB000B469BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A706D55714B90F5900B469BB /* main.m in Sources */,
+				A706D55814B90F5900B469BB /* OPAppDelegate.m in Sources */,
+				A706D56914B9100500B469BB /* OPFoursquareVenue.m in Sources */,
+				A706D56A14B9100500B469BB /* OPFoursquareVenueLocation.m in Sources */,
+				A706D56B14B9100500B469BB /* OPGoogleGeocodeAddressComponent.m in Sources */,
+				A706D56C14B9100500B469BB /* OPGoogleGeocodeResult.m in Sources */,
+				A706D56D14B9100500B469BB /* OPGoogleGeocodeResultGeometry.m in Sources */,
+				A706D56E14B9100500B469BB /* OPLocationCenter.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A706D54514B90EB000B469BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A706D54614B90EB000B469BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A706D54814B90EB000B469BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OPLocationKit/OPLocationKit-Prefix.pch";
+				INFOPLIST_FILE = "OPLocationKit/OPLocationKit-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A706D54914B90EB000B469BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OPLocationKit/OPLocationKit-Prefix.pch";
+				INFOPLIST_FILE = "OPLocationKit/OPLocationKit-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A706D52914B90EB000B469BB /* Build configuration list for PBXProject "OPLocationKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A706D54514B90EB000B469BB /* Debug */,
+				A706D54614B90EB000B469BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A706D54714B90EB000B469BB /* Build configuration list for PBXNativeTarget "OPLocationKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A706D54814B90EB000B469BB /* Debug */,
+				A706D54914B90EB000B469BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A706D52614B90EB000B469BB /* Project object */;
+}
