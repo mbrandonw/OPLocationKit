@@ -1,0 +1,6 @@
+[submodule "OPLocationKit/AFNetworking"]
+	path = OPLocationKit/AFNetworking
+	url = https://github.com/AFNetworking/AFNetworking.git
+[submodule "OPLocationKit/opextensionkit"]
+	path = OPLocationKit/opextensionkit
+	url = git@brandonwilliams.beanstalkapp.com:/opextensionkit.git
