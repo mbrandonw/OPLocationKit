@@ -12,6 +12,7 @@ Pod::Spec.new do |s|
   
   s.frameworks = 'CoreLocation'
   
-  s.dependency 'BlocksKit', '~> 1.0.2'
+  s.dependency 'AFNetworking', '~> 0.7.0'
+  s.dependency 'OPExtensionKit', :git => 'git@brandonwilliams.beanstalkapp.com:/opextensionkit.git'
 
 end

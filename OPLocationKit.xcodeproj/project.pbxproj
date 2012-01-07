@@ -32,7 +32,7 @@
 		A706D55214B90F5900B469BB /* OPAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPAppDelegate.m; sourceTree = "<group>"; };
 		A706D55314B90F5900B469BB /* OPLocationKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "OPLocationKit-Info.plist"; sourceTree = "<group>"; };
 		A706D55414B90F5900B469BB /* OPLocationKit-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OPLocationKit-Prefix.pch"; sourceTree = "<group>"; };
-		A706D55614B90F5900B469BB /* OPLocationKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OPLocationKit.podspec; sourceTree = SOURCE_ROOT; };
+		A706D55614B90F5900B469BB /* OPLocationKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; indentWidth = 2; path = OPLocationKit.podspec; sourceTree = SOURCE_ROOT; tabWidth = 2; };
 		A706D55D14B9100500B469BB /* OPFoursquareVenue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPFoursquareVenue.h; sourceTree = "<group>"; };
 		A706D55E14B9100500B469BB /* OPFoursquareVenue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPFoursquareVenue.m; sourceTree = "<group>"; };
 		A706D55F14B9100500B469BB /* OPFoursquareVenueLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPFoursquareVenueLocation.h; sourceTree = "<group>"; };
