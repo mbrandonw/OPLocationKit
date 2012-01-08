@@ -30,15 +30,12 @@
 		A706D59114B912D900B469BB /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D58514B912D900B469BB /* AFURLConnectionOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A706D59214B912D900B469BB /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D58714B912D900B469BB /* AFXMLRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A706D59314B912D900B469BB /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D58914B912D900B469BB /* UIImageView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		A706D59914B912E300B469BB /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = A706D59514B912E300B469BB /* CHANGELOG.md */; };
 		A706D59A14B912E300B469BB /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D59714B912E300B469BB /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		A706D59B14B912E300B469BB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A706D59814B912E300B469BB /* README.md */; };
 		A706D5DF14B9135C00B469BB /* NSDictionary+Opetopic.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D5AE14B9135C00B469BB /* NSDictionary+Opetopic.m */; };
 		A706D5F514B9138600B469BB /* NSArray+Opetopic.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D5F414B9138600B469BB /* NSArray+Opetopic.m */; };
 		A706D64714B9142100B469BB /* A2BlockDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D5F914B9142000B469BB /* A2BlockDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A706D64814B9142100B469BB /* A2DynamicDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D5FB14B9142000B469BB /* A2DynamicDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A706D64E14B9142100B469BB /* A2BlockDelegate+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D60A14B9142000B469BB /* A2BlockDelegate+BlocksKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		A706D64F14B9142100B469BB /* BlocksKit-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A706D60D14B9142000B469BB /* BlocksKit-Info.plist */; };
 		A706D65014B9142100B469BB /* MFMailComposeViewController+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D61114B9142000B469BB /* MFMailComposeViewController+BlocksKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A706D65114B9142100B469BB /* MFMessageComposeViewController+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D61314B9142000B469BB /* MFMessageComposeViewController+BlocksKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A706D65214B9142100B469BB /* NSArray+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D61514B9142000B469BB /* NSArray+BlocksKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -69,6 +66,64 @@
 		A706D67814B9156E00B469BB /* NSCache+Opetopic.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D67714B9156E00B469BB /* NSCache+Opetopic.m */; };
 		A706D67A14B9159000B469BB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A706D67914B9159000B469BB /* CoreLocation.framework */; };
 		A706D67C14B915B800B469BB /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A706D67B14B915B800B469BB /* MessageUI.framework */; };
+		A706D68314B91A7200B469BB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A706D53314B90EB000B469BB /* UIKit.framework */; };
+		A706D68414B91A7200B469BB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A706D53514B90EB000B469BB /* Foundation.framework */; };
+		A706D68514B91A7200B469BB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A706D53714B90EB000B469BB /* CoreGraphics.framework */; };
+		A706D68D14B91A7200B469BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D68C14B91A7200B469BB /* main.m */; };
+		A706D69614B91ACA00B469BB /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A706D69514B91ACA00B469BB /* GHUnitIOS.framework */; };
+		A706D69914B91B0500B469BB /* OPLocationCenterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D69814B91B0500B469BB /* OPLocationCenterTest.m */; };
+		A706D6A114B91CCB00B469BB /* OPLocationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D56814B9100500B469BB /* OPLocationCenter.m */; };
+		A706D6A214B91CCB00B469BB /* OPFoursquareVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D55E14B9100500B469BB /* OPFoursquareVenue.m */; };
+		A706D6A314B91CCB00B469BB /* OPFoursquareVenueLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D56014B9100500B469BB /* OPFoursquareVenueLocation.m */; };
+		A706D6A414B91CCB00B469BB /* OPGoogleGeocodeAddressComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D56214B9100500B469BB /* OPGoogleGeocodeAddressComponent.m */; };
+		A706D6A514B91CCB00B469BB /* OPGoogleGeocodeResult.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D56414B9100500B469BB /* OPGoogleGeocodeResult.m */; };
+		A706D6A614B91CCB00B469BB /* OPGoogleGeocodeResultGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D56614B9100500B469BB /* OPGoogleGeocodeResultGeometry.m */; };
+		A706D6A714B91CD600B469BB /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D57614B912D900B469BB /* AFHTTPClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6A814B91CD600B469BB /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D57814B912D900B469BB /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6A914B91CD600B469BB /* AFImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D57A14B912D900B469BB /* AFImageCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6AA14B91CD600B469BB /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D57C14B912D900B469BB /* AFImageRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6AB14B91CD600B469BB /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D57E14B912D900B469BB /* AFJSONRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6AC14B91CD600B469BB /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D58014B912D900B469BB /* AFNetworkActivityIndicatorManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6AD14B91CD600B469BB /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D58314B912D900B469BB /* AFPropertyListRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6AE14B91CD600B469BB /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D58514B912D900B469BB /* AFURLConnectionOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6AF14B91CD600B469BB /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D58714B912D900B469BB /* AFXMLRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6B014B91CD600B469BB /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D58914B912D900B469BB /* UIImageView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6B114B91CDA00B469BB /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D59714B912E300B469BB /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6B214B91CEA00B469BB /* OPMacros.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D67414B914C800B469BB /* OPMacros.m */; };
+		A706D6B314B91CEA00B469BB /* NSString+Opetopic.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D67014B914BE00B469BB /* NSString+Opetopic.m */; };
+		A706D6B414B91CEA00B469BB /* NSArray+Opetopic.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D5F414B9138600B469BB /* NSArray+Opetopic.m */; };
+		A706D6B514B91CEA00B469BB /* NSCache+Opetopic.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D67714B9156E00B469BB /* NSCache+Opetopic.m */; };
+		A706D6B614B91CEA00B469BB /* NSDictionary+Opetopic.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D5AE14B9135C00B469BB /* NSDictionary+Opetopic.m */; };
+		A706D6B714B91D0C00B469BB /* A2BlockDelegate+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D60A14B9142000B469BB /* A2BlockDelegate+BlocksKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6B814B91D0C00B469BB /* MFMailComposeViewController+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D61114B9142000B469BB /* MFMailComposeViewController+BlocksKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6B914B91D0C00B469BB /* MFMessageComposeViewController+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D61314B9142000B469BB /* MFMessageComposeViewController+BlocksKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6BA14B91D0C00B469BB /* NSArray+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D61514B9142000B469BB /* NSArray+BlocksKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6BB14B91D0C00B469BB /* NSCache+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D61714B9142000B469BB /* NSCache+BlocksKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6BC14B91D0C00B469BB /* NSDictionary+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D61914B9142000B469BB /* NSDictionary+BlocksKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6BD14B91D0C00B469BB /* NSIndexSet+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D61B14B9142000B469BB /* NSIndexSet+BlocksKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6BE14B91D0C00B469BB /* NSInvocation+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D61D14B9142000B469BB /* NSInvocation+BlocksKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6BF14B91D0C00B469BB /* NSMutableArray+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D61F14B9142000B469BB /* NSMutableArray+BlocksKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6C014B91D0C00B469BB /* NSMutableDictionary+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D62114B9142000B469BB /* NSMutableDictionary+BlocksKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6C114B91D0C00B469BB /* NSMutableIndexSet+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D62314B9142000B469BB /* NSMutableIndexSet+BlocksKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6C214B91D0C00B469BB /* NSMutableSet+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D62514B9142000B469BB /* NSMutableSet+BlocksKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6C314B91D0C00B469BB /* NSObject+AssociatedObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D62714B9142000B469BB /* NSObject+AssociatedObjects.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6C414B91D0C00B469BB /* NSObject+BlockObservation.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D62914B9142000B469BB /* NSObject+BlockObservation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6C514B91D0C00B469BB /* NSObject+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D62B14B9142000B469BB /* NSObject+BlocksKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6C614B91D0C00B469BB /* NSSet+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D62D14B9142000B469BB /* NSSet+BlocksKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6C714B91D0C00B469BB /* NSTimer+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D62F14B9142000B469BB /* NSTimer+BlocksKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6C814B91D0C00B469BB /* NSURLConnection+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D63114B9142000B469BB /* NSURLConnection+BlocksKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6C914B91D0C00B469BB /* UIActionSheet+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D63314B9142000B469BB /* UIActionSheet+BlocksKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6CA14B91D0C00B469BB /* UIAlertView+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D63514B9142000B469BB /* UIAlertView+BlocksKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6CB14B91D0C00B469BB /* UIBarButtonItem+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D63714B9142000B469BB /* UIBarButtonItem+BlocksKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6CC14B91D0C00B469BB /* UIControl+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D63914B9142000B469BB /* UIControl+BlocksKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6CD14B91D0C00B469BB /* UIGestureRecognizer+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D63B14B9142000B469BB /* UIGestureRecognizer+BlocksKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6CE14B91D0C00B469BB /* UIPopoverController+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D63D14B9142000B469BB /* UIPopoverController+BlocksKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6CF14B91D0C00B469BB /* UIView+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D63F14B9142000B469BB /* UIView+BlocksKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6D014B91D0C00B469BB /* UIWebView+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D64114B9142000B469BB /* UIWebView+BlocksKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6D114B91D1400B469BB /* A2BlockDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D5F914B9142000B469BB /* A2BlockDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6D214B91D1400B469BB /* A2DynamicDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A706D5FB14B9142000B469BB /* A2DynamicDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A706D6D314B91D8D00B469BB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A706D67914B9159000B469BB /* CoreLocation.framework */; };
+		A706D6D414B91D9600B469BB /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A706D67B14B915B800B469BB /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,10 +170,8 @@
 		A706D58714B912D900B469BB /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		A706D58814B912D900B469BB /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		A706D58914B912D900B469BB /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
-		A706D59514B912E300B469BB /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
 		A706D59614B912E300B469BB /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		A706D59714B912E300B469BB /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
-		A706D59814B912E300B469BB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		A706D5AD14B9135C00B469BB /* NSDictionary+Opetopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Opetopic.h"; sourceTree = "<group>"; };
 		A706D5AE14B9135C00B469BB /* NSDictionary+Opetopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Opetopic.m"; sourceTree = "<group>"; };
 		A706D5F314B9138600B469BB /* NSArray+Opetopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Opetopic.h"; sourceTree = "<group>"; };
@@ -131,8 +184,6 @@
 		A706D60A14B9142000B469BB /* A2BlockDelegate+BlocksKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "A2BlockDelegate+BlocksKit.m"; sourceTree = "<group>"; };
 		A706D60B14B9142000B469BB /* BKGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKGlobals.h; sourceTree = "<group>"; };
 		A706D60C14B9142000B469BB /* BKMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKMacros.h; sourceTree = "<group>"; };
-		A706D60D14B9142000B469BB /* BlocksKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BlocksKit-Info.plist"; sourceTree = "<group>"; };
-		A706D60E14B9142000B469BB /* BlocksKit-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BlocksKit-Prefix.pch"; sourceTree = "<group>"; };
 		A706D60F14B9142000B469BB /* BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlocksKit.h; sourceTree = "<group>"; };
 		A706D61014B9142000B469BB /* MFMailComposeViewController+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MFMailComposeViewController+BlocksKit.h"; sourceTree = "<group>"; };
 		A706D61114B9142000B469BB /* MFMailComposeViewController+BlocksKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MFMailComposeViewController+BlocksKit.m"; sourceTree = "<group>"; };
@@ -192,6 +243,12 @@
 		A706D67714B9156E00B469BB /* NSCache+Opetopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCache+Opetopic.m"; sourceTree = "<group>"; };
 		A706D67914B9159000B469BB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A706D67B14B915B800B469BB /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		A706D68114B91A7200B469BB /* OPLocationKitTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OPLocationKitTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A706D68814B91A7200B469BB /* OPLocationKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OPLocationKitTests-Info.plist"; sourceTree = "<group>"; };
+		A706D68C14B91A7200B469BB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A706D68E14B91A7200B469BB /* OPLocationKitTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OPLocationKitTests-Prefix.pch"; sourceTree = "<group>"; };
+		A706D69514B91ACA00B469BB /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = OPLocationKitTests/GHUnitIOS.framework; sourceTree = "<group>"; };
+		A706D69814B91B0500B469BB /* OPLocationCenterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPLocationCenterTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +264,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A706D67E14B91A7200B469BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A706D68314B91A7200B469BB /* UIKit.framework in Frameworks */,
+				A706D68414B91A7200B469BB /* Foundation.framework in Frameworks */,
+				A706D6D314B91D8D00B469BB /* CoreLocation.framework in Frameworks */,
+				A706D6D414B91D9600B469BB /* MessageUI.framework in Frameworks */,
+				A706D68514B91A7200B469BB /* CoreGraphics.framework in Frameworks */,
+				A706D69614B91ACA00B469BB /* GHUnitIOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -214,7 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				A706D54F14B90F5900B469BB /* OPLocationKit */,
-				A706D55514B90F5900B469BB /* OPLocationKitTests */,
+				A706D68614B91A7200B469BB /* OPLocationKitTests */,
 				A706D53214B90EB000B469BB /* Frameworks */,
 				A706D53014B90EB000B469BB /* Products */,
 			);
@@ -224,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				A706D52F14B90EB000B469BB /* OPLocationKit.app */,
+				A706D68114B91A7200B469BB /* OPLocationKitTests.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -231,6 +302,7 @@
 		A706D53214B90EB000B469BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A706D69514B91ACA00B469BB /* GHUnitIOS.framework */,
 				A706D67B14B915B800B469BB /* MessageUI.framework */,
 				A706D67914B9159000B469BB /* CoreLocation.framework */,
 				A706D53314B90EB000B469BB /* UIKit.framework */,
@@ -252,13 +324,6 @@
 				A706D55B14B90F6C00B469BB /* Supporting Files */,
 			);
 			path = OPLocationKit;
-			sourceTree = "<group>";
-		};
-		A706D55514B90F5900B469BB /* OPLocationKitTests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = OPLocationKitTests;
 			sourceTree = "<group>";
 		};
 		A706D55B14B90F6C00B469BB /* Supporting Files */ = {
@@ -325,10 +390,8 @@
 		A706D59414B912E300B469BB /* JSONKit */ = {
 			isa = PBXGroup;
 			children = (
-				A706D59514B912E300B469BB /* CHANGELOG.md */,
 				A706D59614B912E300B469BB /* JSONKit.h */,
 				A706D59714B912E300B469BB /* JSONKit.m */,
-				A706D59814B912E300B469BB /* README.md */,
 			);
 			path = JSONKit;
 			sourceTree = "<group>";
@@ -377,8 +440,6 @@
 				A706D60A14B9142000B469BB /* A2BlockDelegate+BlocksKit.m */,
 				A706D60B14B9142000B469BB /* BKGlobals.h */,
 				A706D60C14B9142000B469BB /* BKMacros.h */,
-				A706D60D14B9142000B469BB /* BlocksKit-Info.plist */,
-				A706D60E14B9142000B469BB /* BlocksKit-Prefix.pch */,
 				A706D60F14B9142000B469BB /* BlocksKit.h */,
 				A706D61014B9142000B469BB /* MFMailComposeViewController+BlocksKit.h */,
 				A706D61114B9142000B469BB /* MFMailComposeViewController+BlocksKit.m */,
@@ -444,6 +505,25 @@
 			path = Macros;
 			sourceTree = "<group>";
 		};
+		A706D68614B91A7200B469BB /* OPLocationKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				A706D69814B91B0500B469BB /* OPLocationCenterTest.m */,
+				A706D68714B91A7200B469BB /* Supporting Files */,
+			);
+			path = OPLocationKitTests;
+			sourceTree = "<group>";
+		};
+		A706D68714B91A7200B469BB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A706D68814B91A7200B469BB /* OPLocationKitTests-Info.plist */,
+				A706D68C14B91A7200B469BB /* main.m */,
+				A706D68E14B91A7200B469BB /* OPLocationKitTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -464,6 +544,23 @@
 			productReference = A706D52F14B90EB000B469BB /* OPLocationKit.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A706D68014B91A7200B469BB /* OPLocationKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A706D69214B91A7200B469BB /* Build configuration list for PBXNativeTarget "OPLocationKitTests" */;
+			buildPhases = (
+				A706D67D14B91A7200B469BB /* Sources */,
+				A706D67E14B91A7200B469BB /* Frameworks */,
+				A706D67F14B91A7200B469BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OPLocationKitTests;
+			productName = OPLocationKitTests;
+			productReference = A706D68114B91A7200B469BB /* OPLocationKitTests.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -471,6 +568,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = Opetopic;
 			};
 			buildConfigurationList = A706D52914B90EB000B469BB /* Build configuration list for PBXProject "OPLocationKit" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -485,6 +583,7 @@
 			projectRoot = "";
 			targets = (
 				A706D52E14B90EB000B469BB /* OPLocationKit */,
+				A706D68014B91A7200B469BB /* OPLocationKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -496,9 +595,13 @@
 			files = (
 				A706D55914B90F5900B469BB /* OPLocationKit-Info.plist in Resources */,
 				A706D55A14B90F5900B469BB /* OPLocationKit.podspec in Resources */,
-				A706D59914B912E300B469BB /* CHANGELOG.md in Resources */,
-				A706D59B14B912E300B469BB /* README.md in Resources */,
-				A706D64F14B9142100B469BB /* BlocksKit-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A706D67F14B91A7200B469BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,6 +664,65 @@
 				A706D67114B914BE00B469BB /* NSString+Opetopic.m in Sources */,
 				A706D67514B914C800B469BB /* OPMacros.m in Sources */,
 				A706D67814B9156E00B469BB /* NSCache+Opetopic.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A706D67D14B91A7200B469BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A706D68D14B91A7200B469BB /* main.m in Sources */,
+				A706D69914B91B0500B469BB /* OPLocationCenterTest.m in Sources */,
+				A706D6A114B91CCB00B469BB /* OPLocationCenter.m in Sources */,
+				A706D6A214B91CCB00B469BB /* OPFoursquareVenue.m in Sources */,
+				A706D6A314B91CCB00B469BB /* OPFoursquareVenueLocation.m in Sources */,
+				A706D6A414B91CCB00B469BB /* OPGoogleGeocodeAddressComponent.m in Sources */,
+				A706D6A514B91CCB00B469BB /* OPGoogleGeocodeResult.m in Sources */,
+				A706D6A614B91CCB00B469BB /* OPGoogleGeocodeResultGeometry.m in Sources */,
+				A706D6A714B91CD600B469BB /* AFHTTPClient.m in Sources */,
+				A706D6A814B91CD600B469BB /* AFHTTPRequestOperation.m in Sources */,
+				A706D6A914B91CD600B469BB /* AFImageCache.m in Sources */,
+				A706D6AA14B91CD600B469BB /* AFImageRequestOperation.m in Sources */,
+				A706D6AB14B91CD600B469BB /* AFJSONRequestOperation.m in Sources */,
+				A706D6AC14B91CD600B469BB /* AFNetworkActivityIndicatorManager.m in Sources */,
+				A706D6AD14B91CD600B469BB /* AFPropertyListRequestOperation.m in Sources */,
+				A706D6AE14B91CD600B469BB /* AFURLConnectionOperation.m in Sources */,
+				A706D6AF14B91CD600B469BB /* AFXMLRequestOperation.m in Sources */,
+				A706D6B014B91CD600B469BB /* UIImageView+AFNetworking.m in Sources */,
+				A706D6B114B91CDA00B469BB /* JSONKit.m in Sources */,
+				A706D6B214B91CEA00B469BB /* OPMacros.m in Sources */,
+				A706D6B314B91CEA00B469BB /* NSString+Opetopic.m in Sources */,
+				A706D6B414B91CEA00B469BB /* NSArray+Opetopic.m in Sources */,
+				A706D6B514B91CEA00B469BB /* NSCache+Opetopic.m in Sources */,
+				A706D6B614B91CEA00B469BB /* NSDictionary+Opetopic.m in Sources */,
+				A706D6B714B91D0C00B469BB /* A2BlockDelegate+BlocksKit.m in Sources */,
+				A706D6B814B91D0C00B469BB /* MFMailComposeViewController+BlocksKit.m in Sources */,
+				A706D6B914B91D0C00B469BB /* MFMessageComposeViewController+BlocksKit.m in Sources */,
+				A706D6BA14B91D0C00B469BB /* NSArray+BlocksKit.m in Sources */,
+				A706D6BB14B91D0C00B469BB /* NSCache+BlocksKit.m in Sources */,
+				A706D6BC14B91D0C00B469BB /* NSDictionary+BlocksKit.m in Sources */,
+				A706D6BD14B91D0C00B469BB /* NSIndexSet+BlocksKit.m in Sources */,
+				A706D6BE14B91D0C00B469BB /* NSInvocation+BlocksKit.m in Sources */,
+				A706D6BF14B91D0C00B469BB /* NSMutableArray+BlocksKit.m in Sources */,
+				A706D6C014B91D0C00B469BB /* NSMutableDictionary+BlocksKit.m in Sources */,
+				A706D6C114B91D0C00B469BB /* NSMutableIndexSet+BlocksKit.m in Sources */,
+				A706D6C214B91D0C00B469BB /* NSMutableSet+BlocksKit.m in Sources */,
+				A706D6C314B91D0C00B469BB /* NSObject+AssociatedObjects.m in Sources */,
+				A706D6C414B91D0C00B469BB /* NSObject+BlockObservation.m in Sources */,
+				A706D6C514B91D0C00B469BB /* NSObject+BlocksKit.m in Sources */,
+				A706D6C614B91D0C00B469BB /* NSSet+BlocksKit.m in Sources */,
+				A706D6C714B91D0C00B469BB /* NSTimer+BlocksKit.m in Sources */,
+				A706D6C814B91D0C00B469BB /* NSURLConnection+BlocksKit.m in Sources */,
+				A706D6C914B91D0C00B469BB /* UIActionSheet+BlocksKit.m in Sources */,
+				A706D6CA14B91D0C00B469BB /* UIAlertView+BlocksKit.m in Sources */,
+				A706D6CB14B91D0C00B469BB /* UIBarButtonItem+BlocksKit.m in Sources */,
+				A706D6CC14B91D0C00B469BB /* UIControl+BlocksKit.m in Sources */,
+				A706D6CD14B91D0C00B469BB /* UIGestureRecognizer+BlocksKit.m in Sources */,
+				A706D6CE14B91D0C00B469BB /* UIPopoverController+BlocksKit.m in Sources */,
+				A706D6CF14B91D0C00B469BB /* UIView+BlocksKit.m in Sources */,
+				A706D6D014B91D0C00B469BB /* UIWebView+BlocksKit.m in Sources */,
+				A706D6D114B91D1400B469BB /* A2BlockDelegate.m in Sources */,
+				A706D6D214B91D1400B469BB /* A2DynamicDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,6 +798,46 @@
 			};
 			name = Release;
 		};
+		A706D69314B91A7200B469BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/OPLocationKitTests\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OPLocationKitTests/OPLocationKitTests-Prefix.pch";
+				INFOPLIST_FILE = "OPLocationKitTests/OPLocationKitTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A706D69414B91A7200B469BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/OPLocationKitTests\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OPLocationKitTests/OPLocationKitTests-Prefix.pch";
+				INFOPLIST_FILE = "OPLocationKitTests/OPLocationKitTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -656,6 +858,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		A706D69214B91A7200B469BB /* Build configuration list for PBXNativeTarget "OPLocationKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A706D69314B91A7200B469BB /* Debug */,
+				A706D69414B91A7200B469BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
