@@ -1,6 +1,6 @@
 //
 //  OPLocationCenter.h
-//  OPKit
+//  OPLocationKit
 //
 //  Created by Brandon Williams on 6/26/11.
 //  Copyright 2011 Opetopic. All rights reserved.
@@ -14,7 +14,7 @@ extern NSString* const kOPLocationCenterUpdateNotification;
 extern NSString* const kOPLocationCenterGoogleGeocodeUpdateNotification;
 extern NSString* const kOPLocationCenterFoursquareVenueUpdateNotification;
 
-@interface OPLocationCenter : NSObject <CLLocationManagerDelegate>
+@interface OPLocationCenter : NSObject
 
 @property (nonatomic, retain, readonly) CLLocationManager *manager;
 

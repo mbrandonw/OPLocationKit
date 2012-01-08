@@ -1,6 +1,6 @@
 //
 //  OPLocationCenter.m
-//  OPKit
+//  OPLocationKit
 //
 //  Created by Brandon Williams on 6/26/11.
 //  Copyright 2011 Opetopic. All rights reserved.
@@ -13,7 +13,7 @@
 #import "NSDictionary+Opetopic.h"
 #import "NSArray+Opetopic.h"
 #import "NSString+Opetopic.h"
-#import "OPCache.h"
+#import "NSCache+Opetopic.h"
 #import "OPMacros.h"
 
 #import "OPGoogleGeocodeResult.h"
@@ -30,12 +30,14 @@ NSString* const kOPLocationCenterUpdateNotification                 = @"OPLocati
 NSString* const kOPLocationCenterGoogleGeocodeUpdateNotification    = @"OPLocationCenterGoogleGeocodeUpdateNotification";
 NSString* const kOPLocationCenterFoursquareVenueUpdateNotification  = @"OPLocationCenterFoursquareVenueUpdateNotification";
 
-@interface OPLocationCenter (/**/)
+@interface OPLocationCenter (/**/) <CLLocationManagerDelegate>
 @property (nonatomic, retain) AFJSONRequestOperation *geocodeOperation;
 @property (nonatomic, retain) AFJSONRequestOperation *foursquareOperation;
 @property (nonatomic, retain, readwrite) CLLocationManager *manager;
 @property (nonatomic, retain, readwrite) NSArray *geocodedResults;
 @property (nonatomic, retain, readwrite) NSArray *foursquareVenues;
+
+-(void) _loadFoursquareVenuesWithQuery:(NSString*)query;
 @end
 
 @implementation OPLocationCenter
@@ -169,6 +171,12 @@ OP_SYNTHESIZE_SINGLETON_FOR_CLASS(OPLocationCenter, sharedLocationCenter)
 
 -(void) loadFoursquareVenuesWithQuery:(NSString*)query {
     
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    [self performSelector:@selector(_loadFoursquareVenuesWithQuery:) withObject:query afterDelay:0.5f];
+}
+
+-(void) _loadFoursquareVenuesWithQuery:(NSString*)query {
+    
     // build the API call for foursquare
     NSString *urlString = [NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?intent=checkin&limit=30&v=20111215&ll=%f,%f&llAcc=%f&client_id=%@&client_secret=%@&query=%@", self.manager.location.coordinate.latitude, self.manager.location.coordinate.longitude, self.manager.location.horizontalAccuracy, self.foursquareConsumerKey, self.foursquareConsumerSecret, [query?query:@"" URLEncodedString]];
     
@@ -197,7 +205,7 @@ OP_SYNTHESIZE_SINGLETON_FOR_CLASS(OPLocationCenter, sharedLocationCenter)
     if ([self.geocodedResults count] == 0)
         return nil;
     
-    return [[OPCache sharedCache] objectForKey:[NSString stringWithFormat:@"OPLocationCenter/neighborhoodResults/%i", self.geocodedResults] withGetter:^id(void){
+    return [[NSCache sharedCache] objectForKey:[NSString stringWithFormat:@"OPLocationCenter/neighborhoodResults/%p", self.geocodedResults] withGetter:^id(void){
         
         return [self.geocodedResults select:^BOOL(id obj) {
             

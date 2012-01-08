@@ -1,6 +1,6 @@
 //
 //  OPGoogleGeocodeResult.m
-//  OPKit
+//  OPLocationKit
 //
 //  Created by Brandon Williams on 12/15/11.
 //  Copyright (c) 2011 Opetopic. All rights reserved.
