@@ -212,7 +212,7 @@ OP_SYNTHESIZE_SINGLETON_FOR_CLASS(OPLocationCenter, sharedLocationCenter)
             OPGoogleGeocodeResult *result = (OPGoogleGeocodeResult*)obj;
             
             // neighborhoods are the results that are of specific types
-            return [result.types containsAnObjectIn:$arr(OPGoogleGeocodeTypeNeighborhood, OPGoogleGeocodeTypeSublocality, OPGoogleGeocodeTypeAdministrativeAreaLevel2, OPGoogleGeocodeTypeColloquialArea)];
+            return [result.types containsAnObjectIn:$array(OPGoogleGeocodeTypeNeighborhood, OPGoogleGeocodeTypeSublocality, OPGoogleGeocodeTypeAdministrativeAreaLevel2, OPGoogleGeocodeTypeColloquialArea)];
             
         }];
         

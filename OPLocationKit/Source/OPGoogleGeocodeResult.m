@@ -99,7 +99,7 @@ NSString* const OPGoogleGeocodeTypeRoom                         = @"room";
 -(NSString*) neighborhood {
     
     return [[self.addressComponents match:^BOOL(id obj) {
-        return [[obj types] containsAnObjectIn:$arr(OPGoogleGeocodeTypeNeighborhood, OPGoogleGeocodeTypeSublocality, OPGoogleGeocodeTypeLocality, OPGoogleGeocodeTypeAdministrativeAreaLevel1, OPGoogleGeocodeTypeAdministrativeAreaLevel2)];
+        return [[obj types] containsAnObjectIn:$array(OPGoogleGeocodeTypeNeighborhood, OPGoogleGeocodeTypeSublocality, OPGoogleGeocodeTypeLocality, OPGoogleGeocodeTypeAdministrativeAreaLevel1, OPGoogleGeocodeTypeAdministrativeAreaLevel2)];
     }] longName];
     
 }
@@ -107,7 +107,7 @@ NSString* const OPGoogleGeocodeTypeRoom                         = @"room";
 -(NSString*) city {
     
     return [[self.addressComponents match:^BOOL(id obj) {
-        return [[obj types] containsAnObjectIn:$arr(OPGoogleGeocodeTypeLocality, OPGoogleGeocodeTypeAdministrativeAreaLevel2)];
+        return [[obj types] containsAnObjectIn:$array(OPGoogleGeocodeTypeLocality, OPGoogleGeocodeTypeAdministrativeAreaLevel2)];
     }] longName];
 }
 
