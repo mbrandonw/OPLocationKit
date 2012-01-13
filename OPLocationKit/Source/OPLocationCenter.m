@@ -207,7 +207,7 @@ OP_SYNTHESIZE_SINGLETON_FOR_CLASS(OPLocationCenter, sharedLocationCenter)
     
     return [[NSCache sharedCache] objectForKey:[NSString stringWithFormat:@"OPLocationCenter/neighborhoodResults/%p", self.geocodedResults] withGetter:^id(void){
         
-        return [self.geocodedResults select:^BOOL(id obj) {
+        NSArray *neighborhoods = [self.geocodedResults select:^BOOL(id obj) {
             
             OPGoogleGeocodeResult *result = (OPGoogleGeocodeResult*)obj;
             
@@ -216,8 +216,8 @@ OP_SYNTHESIZE_SINGLETON_FOR_CLASS(OPLocationCenter, sharedLocationCenter)
             
         }];
         
+        return neighborhoods ? neighborhoods : [NSArray array];
     }];
 }
-
 
 @end
