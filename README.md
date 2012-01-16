@@ -1,6 +1,6 @@
 #OPLocationKit - tomorrow's CoreLocation improvements, today
 
-OPLocationKit was built to encapsulate all of the fancy functionality we needed while building location based apps (e.g. [Cloud Assassin](http://www.cloudassass.in)). The interface you will work mostly with is the `OPLocationCenter` singleton, which can be fired up when your app starts to being querying for location. You can configure the class to automatically geocode your location into a hiearchy of neighborhoods, county, city, etc. (using Google's geocode API), as well as find nearby venues (using Foursquare's API). This data is deserialized into corresponding `OPGoogleGeocodeResult` and `OPFoursquareVenue` classes.
+OPLocationKit was built to encapsulate all of the fancy functionality we needed while building location based apps (e.g. [Cloud Assassin](http://www.cloudassass.in)). The interface you will work mostly with is the `OPLocationCenter` singleton, which can be fired up when your app starts to begin querying for location. You can configure the class to automatically geocode your location into a hiearchy of neighborhoods, county, city, etc. (using Google's geocode API), as well as find nearby venues (using Foursquare's API). This data is deserialized into corresponding `OPGoogleGeocodeResult` and `OPFoursquareVenue` classes.
 
 ##Example usage
 
