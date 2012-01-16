@@ -46,8 +46,8 @@ NSString* const kOPLocationCenterFoursquareVenueUpdateNotification  = @"OPLocati
 @synthesize foursquareOperation;
 @synthesize manager;
 @synthesize geocodedResults;
-@synthesize geocodeLocation;
-@synthesize findFoursquareVenues;
+@synthesize geocodesLocation;
+@synthesize findsFoursquareVenues;
 @synthesize foursquareConsumerKey;
 @synthesize foursquareConsumerSecret;
 @synthesize foursquareVenues;
@@ -64,6 +64,8 @@ OP_SYNTHESIZE_SINGLETON_FOR_CLASS(OPLocationCenter, sharedLocationCenter)
 -(id) init {
 	if (! (self = [super init]))
 		return nil;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(geocodeUpdate) name:kOPLocationCenterGoogleGeocodeUpdateNotification object:nil];
 	
 	// create and configure the location manager
 	manager = [[CLLocationManager alloc] init];
@@ -118,14 +120,14 @@ OP_SYNTHESIZE_SINGLETON_FOR_CLASS(OPLocationCenter, sharedLocationCenter)
 	
     
     // check if we should geocode our location
-    if (self.geocodeLocation)
+    if (self.geocodesLocation)
     {
         [self loadGeocodedResults];
     }
     
     
     // check if we should hit up foursquare to find nearby venues
-    if (self.findFoursquareVenues && self.foursquareConsumerKey && self.foursquareConsumerSecret)
+    if (self.findsFoursquareVenues && self.foursquareConsumerKey && self.foursquareConsumerSecret)
     {
         [self loadFoursquareVenues];
     }
