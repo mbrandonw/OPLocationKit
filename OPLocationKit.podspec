@@ -4,16 +4,16 @@ Pod::Spec.new do |s|
   s.license  = 'MIT'
   
   s.summary  = 'Sweet location stuffs.'
-  s.homepage = 'https://brandonwilliams.beanstalkapp.com/oplocationkit'
+  s.homepage = 'https://github.com/mbrandonw/OPLocationKit'
   s.author   = { 'Brandon Williams' => 'brandon@opetopic.com' }
-  s.source   = { :git => 'git@brandonwilliams.beanstalkapp.com:/oplocationkit.git' }
+  s.source   = { :git => 'git@github.com:mbrandonw/OPLocationKit.git' }
   
-  s.source_files = 'Source/**/*.{h,m}'
+  s.source_files = 'OPLocationKit/Source/**/*.{h,m}'
   
   s.frameworks = 'CoreLocation'
   
   s.dependency 'BlocksKit', '~> 1.0.1'
   s.dependency 'AFNetworking', '~> 0.7.0'
-  s.dependency 'OPExtensionKit', :git => 'git@brandonwilliams.beanstalkapp.com:/opextensionkit.git'
+  s.dependency 'OPExtensionKit', :git => 'git@github.com:mbrandonw/OPExtensionKit.git'
 
 end
