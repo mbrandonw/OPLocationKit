@@ -9,10 +9,16 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
-extern NSString* const kOPLocationCenterErrorNotification;
-extern NSString* const kOPLocationCenterUpdateNotification;
-extern NSString* const kOPLocationCenterGoogleGeocodeUpdateNotification;
-extern NSString* const kOPLocationCenterFoursquareVenueUpdateNotification;
+extern const struct OPLocationCenterNotifications {
+    __unsafe_unretained NSString *started;
+	__unsafe_unretained NSString *update;
+    __unsafe_unretained NSString *ended;
+    
+	__unsafe_unretained NSString *error;
+    
+	__unsafe_unretained NSString *googleGeocode;
+	__unsafe_unretained NSString *foursquareVenues;
+} OPLocationCenterNotifications;
 
 @interface OPLocationCenter : NSObject
 

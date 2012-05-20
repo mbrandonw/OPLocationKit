@@ -55,4 +55,8 @@
     self.country = [location stringForKey:@"country"];
 }
 
+-(NSString*) description {
+    return [NSString stringWithFormat:@"%@\n%@\n%@, %@ %@\n%f, %f", [super description], self.address, self.city, self.state, self.country, self.latitude, self.longitude];
+}
+
 @end

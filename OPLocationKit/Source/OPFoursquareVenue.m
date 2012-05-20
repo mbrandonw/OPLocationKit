@@ -57,4 +57,8 @@
     self.hereNowCount = [[[venue dictionaryForKey:@"hereNow"] numberForKey:@"count"] unsignedIntValue];
 }
 
+-(NSString*) description {
+    return [NSString stringWithFormat:@"%@\n  Name: %@\n  Location: %@", [super description], self.name, self.location];
+}
+
 @end

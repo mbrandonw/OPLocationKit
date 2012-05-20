@@ -25,10 +25,14 @@
 #define kGoogleGeocodingStatusRequestDenied     @"REQUEST_DENIED"
 #define kGoogleGeocodingStatusInvalidRequest    @"INVALID_REQUEST"
 
-NSString* const kOPLocationCenterErrorNotification                  = @"OPLocationCenterErrorNotification";
-NSString* const kOPLocationCenterUpdateNotification                 = @"OPLocationCenterUpdateNotification";
-NSString* const kOPLocationCenterGoogleGeocodeUpdateNotification    = @"OPLocationCenterGoogleGeocodeUpdateNotification";
-NSString* const kOPLocationCenterFoursquareVenueUpdateNotification  = @"OPLocationCenterFoursquareVenueUpdateNotification";
+const struct OPLocationCenterNotifications OPLocationCenterNotifications = {
+    .error = @"OPLocationCenterNotifications.error",
+    .started = @"OPLocationCenterNotifications.started",
+    .update = @"OPLocationCenterNotifications.update",
+    .ended = @"OPLocationCenterNotifications.ended",
+    .googleGeocode = @"OPLocationCenterNotifications.googleGeocode",
+    .foursquareVenues = @"OPLocationCenterNotifications.foursquareVenue",
+};
 
 @interface OPLocationCenter (/**/) <CLLocationManagerDelegate>
 @property (nonatomic, retain) AFJSONRequestOperation *geocodeOperation;
@@ -65,8 +69,6 @@ OP_SYNTHESIZE_SINGLETON_FOR_CLASS(OPLocationCenter, sharedLocationCenter)
 	if (! (self = [super init]))
 		return nil;
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(geocodeUpdate) name:kOPLocationCenterGoogleGeocodeUpdateNotification object:nil];
-	
 	// create and configure the location manager
 	manager = [[CLLocationManager alloc] init];
 	manager.delegate = self;
@@ -87,17 +89,19 @@ OP_SYNTHESIZE_SINGLETON_FOR_CLASS(OPLocationCenter, sharedLocationCenter)
 	
 	if ([CLLocationManager locationServicesEnabled])
 	{
+        [[NSNotificationCenter defaultCenter] postNotificationName:OPLocationCenterNotifications.started object:nil];
 		[self.manager startUpdatingLocation];
         
         // turn of GPS after some time
         [NSObject performBlock:^{
+            [[NSNotificationCenter defaultCenter] postNotificationName:OPLocationCenterNotifications.ended object:nil];
             [self.manager stopUpdatingLocation];
         } afterDelay:self.accuracySearchTimeInterval];
 	}
 }
 
 -(void) stopLocation {
-	
+    [[NSNotificationCenter defaultCenter] postNotificationName:OPLocationCenterNotifications.ended object:nil];
 	[self.manager stopUpdatingLocation];
 }
 #pragma mark -
@@ -116,7 +120,7 @@ OP_SYNTHESIZE_SINGLETON_FOR_CLASS(OPLocationCenter, sharedLocationCenter)
 	}
 	
 	// let all interested parties know that we obtained a new location coordinate
-	[[NSNotificationCenter defaultCenter] postNotificationName:kOPLocationCenterUpdateNotification object:self userInfo:nil];
+	[[NSNotificationCenter defaultCenter] postNotificationName:OPLocationCenterNotifications.update object:nil];
 	
     
     // check if we should geocode our location
@@ -136,8 +140,8 @@ OP_SYNTHESIZE_SINGLETON_FOR_CLASS(OPLocationCenter, sharedLocationCenter)
 -(void) locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
 	
 	// let all interested parties know that we failed to find a location
-	[[NSNotificationCenter defaultCenter] postNotificationName:kOPLocationCenterErrorNotification
-														object:self
+	[[NSNotificationCenter defaultCenter] postNotificationName:OPLocationCenterNotifications.error
+														object:nil
 													  userInfo:[NSDictionary dictionaryWithObject:error forKey:@"error"]];
 }
 #pragma mark -
@@ -161,7 +165,7 @@ OP_SYNTHESIZE_SINGLETON_FOR_CLASS(OPLocationCenter, sharedLocationCenter)
              return [[OPGoogleGeocodeResult alloc] initWithDictionary:obj];
          }];
          
-         [[NSNotificationCenter defaultCenter] postNotificationName:kOPLocationCenterGoogleGeocodeUpdateNotification object:nil];
+         [[NSNotificationCenter defaultCenter] postNotificationName:OPLocationCenterNotifications.googleGeocode object:nil];
          
      } failure:nil];
     [self.geocodeOperation start];
@@ -193,7 +197,7 @@ OP_SYNTHESIZE_SINGLETON_FOR_CLASS(OPLocationCenter, sharedLocationCenter)
              return [[OPFoursquareVenue alloc] initWithDictionary:obj];
          }];
          
-         [[NSNotificationCenter defaultCenter] postNotificationName:kOPLocationCenterFoursquareVenueUpdateNotification object:nil];
+         [[NSNotificationCenter defaultCenter] postNotificationName:OPLocationCenterNotifications.foursquareVenues object:nil];
          
      } failure:nil];
     [self.foursquareOperation start];
