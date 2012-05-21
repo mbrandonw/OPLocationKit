@@ -45,12 +45,12 @@ extern NSString* const OPGoogleGeocodeTypeRoom;
 @property (nonatomic, retain, readonly) NSArray *types;
 
 // smart properties
-@property (nonatomic, readonly) NSString *address;
-@property (nonatomic, readonly) NSString *neighborhood;
-@property (nonatomic, readonly) NSString *city;
-@property (nonatomic, readonly) NSString *state;
-@property (nonatomic, readonly) NSString *postalCode;
-@property (nonatomic, readonly) NSString *country;
+-(NSString*) address;
+-(NSString*) neighborhood:(BOOL)short_;
+-(NSString*) city:(BOOL)short_;
+-(NSString*) state:(BOOL)short_;
+-(NSString*) postalCode:(BOOL)short_;
+-(NSString*) country:(BOOL)short_;
 
 -(id) initWithDictionary:(NSDictionary*)result;
 -(void) updateWithDictionary:(NSDictionary*)result;

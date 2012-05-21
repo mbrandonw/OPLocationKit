@@ -76,6 +76,9 @@ NSString* const OPGoogleGeocodeTypeRoom                         = @"room";
 
 #pragma mark Smart properties
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+
 -(NSString*) address {
     
     NSString *streetAddress = [[self.addressComponents match:^BOOL(id obj) {
@@ -96,40 +99,42 @@ NSString* const OPGoogleGeocodeTypeRoom                         = @"room";
     return [NSString stringWithFormat:@"%@ %@", streetNumber, route];
 }
 
--(NSString*) neighborhood {
+-(NSString*) neighborhood:(BOOL)short_ {
     
     return [[self.addressComponents match:^BOOL(id obj) {
         return [[obj types] containsAnObjectIn:$array(OPGoogleGeocodeTypeNeighborhood, OPGoogleGeocodeTypeSublocality, OPGoogleGeocodeTypeLocality, OPGoogleGeocodeTypeAdministrativeAreaLevel1, OPGoogleGeocodeTypeAdministrativeAreaLevel2)];
-    }] longName];
+    }] performSelector:short_ ? @selector(shortName) : @selector(longName)];
     
 }
 
--(NSString*) city {
+-(NSString*) city:(BOOL)short_ {
     
     return [[self.addressComponents match:^BOOL(id obj) {
         return [[obj types] containsAnObjectIn:$array(OPGoogleGeocodeTypeLocality, OPGoogleGeocodeTypeAdministrativeAreaLevel2)];
-    }] longName];
+    }] performSelector:short_ ? @selector(shortName) : @selector(longName)];
 }
 
--(NSString*) state {
+-(NSString*) state:(BOOL)short_ {
     
     return [[self.addressComponents match:^BOOL(id obj) {
         return [[obj types] containsObject:OPGoogleGeocodeTypeAdministrativeAreaLevel1];
-    }] longName];
+    }] performSelector:short_ ? @selector(shortName) : @selector(longName)];
 }
 
--(NSString*) postalCode {
+-(NSString*) postalCode:(BOOL)short_ {
     
     return [[self.addressComponents match:^BOOL(id obj) {
         return [[obj types] containsObject:OPGoogleGeocodeTypePostalCode];
-    }] longName];
+    }] performSelector:short_ ? @selector(shortName) : @selector(longName)];
 }
 
--(NSString*) country {
+-(NSString*) country:(BOOL)short_ {
     
     return [[self.addressComponents match:^BOOL(id obj) {
         return [[obj types] containsObject:OPGoogleGeocodeTypeCountry];
-    }] longName];
+    }] performSelector:short_ ? @selector(shortName) : @selector(longName)];
 }
+
+#pragma clang diagnostic pop
 
 @end
