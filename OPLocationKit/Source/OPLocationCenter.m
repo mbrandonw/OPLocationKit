@@ -9,6 +9,7 @@
 #import "OPLocationCenter.h"
 #import "NSArray+Opetopic.h"
 #import "BlocksKit.h"
+#import "GCD+Opetopic.h"
 #import "AFJSONRequestOperation.h"
 #import "NSDictionary+Opetopic.h"
 #import "NSArray+Opetopic.h"
@@ -40,6 +41,7 @@ const struct OPLocationCenterNotifications OPLocationCenterNotifications = {
 @property (nonatomic, retain, readwrite) CLLocationManager *manager;
 @property (nonatomic, retain, readwrite) NSArray *geocodedResults;
 @property (nonatomic, retain, readwrite) NSArray *foursquareVenues;
+@property (nonatomic, assign, getter=isUpdatingLocation) BOOL updatingLocation;
 
 -(void) _loadFoursquareVenuesWithQuery:(NSString*)query;
 @end
@@ -58,6 +60,7 @@ const struct OPLocationCenterNotifications OPLocationCenterNotifications = {
 @synthesize horizontalAccuracyThreshold;
 @synthesize timestampAccuracyThreshold;
 @synthesize accuracySearchTimeInterval;
+@synthesize updatingLocation = _updatingLocation;
 
 #pragma mark Singleton methods
 OP_SYNTHESIZE_SINGLETON_FOR_CLASS(OPLocationCenter, sharedLocationCenter)
@@ -74,9 +77,17 @@ OP_SYNTHESIZE_SINGLETON_FOR_CLASS(OPLocationCenter, sharedLocationCenter)
 	manager.delegate = self;
 	manager.desiredAccuracy = kCLLocationAccuracyBest;
     
-    // init ivars
+    // how much accuracy do we want before sending out notifications?
     horizontalAccuracyThreshold = 200.0f;       // ~ 1 city block
-    timestampAccuracyThreshold = 60.0f * 30.0f; // 1 hour
+
+    // how old of a cached coordinate are we willing to deal with?
+#ifdef DEBUG
+    timestampAccuracyThreshold = 10.0f;         // 10 seconds
+#else
+    timestampAccuracyThreshold = 60.0f * 10.0f; // 10 minutes
+#endif
+
+    // kill location search after some time
     accuracySearchTimeInterval = 30.0f;         // 30 secs
 	
 	return self;
@@ -89,20 +100,26 @@ OP_SYNTHESIZE_SINGLETON_FOR_CLASS(OPLocationCenter, sharedLocationCenter)
 	
 	if ([CLLocationManager locationServicesEnabled])
 	{
-        [[NSNotificationCenter defaultCenter] postNotificationName:OPLocationCenterNotifications.started object:nil];
+        if (! self.updatingLocation)
+            [[NSNotificationCenter defaultCenter] postNotificationName:OPLocationCenterNotifications.started object:nil];
+        
 		[self.manager startUpdatingLocation];
+        self.updatingLocation = YES;
         
         // turn of GPS after some time
-        [NSObject performBlock:^{
-            [[NSNotificationCenter defaultCenter] postNotificationName:OPLocationCenterNotifications.ended object:nil];
-            [self.manager stopUpdatingLocation];
-        } afterDelay:self.accuracySearchTimeInterval];
+        dispatch_after_delay(self.accuracySearchTimeInterval, ^{
+            [self stopLocation];
+        });
 	}
 }
 
 -(void) stopLocation {
-    [[NSNotificationCenter defaultCenter] postNotificationName:OPLocationCenterNotifications.ended object:nil];
+    
+    if (self.updatingLocation)
+        [[NSNotificationCenter defaultCenter] postNotificationName:OPLocationCenterNotifications.ended object:nil];
+    
 	[self.manager stopUpdatingLocation];
+    self.updatingLocation = NO;
 }
 #pragma mark -
 
