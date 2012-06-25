@@ -126,7 +126,7 @@ OP_SYNTHESIZE_SINGLETON_FOR_CLASS(OPLocationCenter, sharedLocationCenter)
 
 #pragma mark CLLocationManagerDelegate methods
 -(void) locationManager:(CLLocationManager *)theManager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
-	DLog(@"%@", newLocation);
+	DLogSimple(@"%@", newLocation);
 	
 	// if we have gotten enough accuracy then we can stop monitoring location
 	if (newLocation.horizontalAccuracy <= self.horizontalAccuracyThreshold && [newLocation.timestamp timeIntervalSinceNow] >= -self.timestampAccuracyThreshold) {
