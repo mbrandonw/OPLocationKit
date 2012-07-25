@@ -159,7 +159,7 @@ OP_SYNTHESIZE_SINGLETON_FOR_CLASS(OPLocationCenter, sharedLocationCenter)
 	// let all interested parties know that we failed to find a location
 	[[NSNotificationCenter defaultCenter] postNotificationName:OPLocationCenterNotifications.error
 														object:nil
-													  userInfo:[NSDictionary dictionaryWithObject:error forKey:@"error"]];
+													  userInfo:@{@"error": error}];
 }
 #pragma mark -
 
@@ -235,11 +235,11 @@ OP_SYNTHESIZE_SINGLETON_FOR_CLASS(OPLocationCenter, sharedLocationCenter)
             OPGoogleGeocodeResult *result = (OPGoogleGeocodeResult*)obj;
             
             // neighborhoods are the results that are of specific types
-            return [result.types containsAnObjectIn:$array(OPGoogleGeocodeTypeNeighborhood, OPGoogleGeocodeTypeSublocality, OPGoogleGeocodeTypeAdministrativeAreaLevel2, OPGoogleGeocodeTypeColloquialArea)];
+            return [result.types containsAnObjectIn:@[OPGoogleGeocodeTypeNeighborhood, OPGoogleGeocodeTypeSublocality, OPGoogleGeocodeTypeAdministrativeAreaLevel2, OPGoogleGeocodeTypeColloquialArea]];
             
         }];
         
-        return neighborhoods ? neighborhoods : [NSArray array];
+        return neighborhoods ? neighborhoods : @[];
     }];
 }
 
