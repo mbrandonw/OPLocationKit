@@ -22,11 +22,6 @@ NSString* const OPGoogleGeocodeLocationTypeApproximate           = @"APPROXIMATE
 
 @implementation OPGoogleGeocodeResultGeometry
 
-@synthesize location;
-@synthesize locationType;
-@synthesize viewportNortheast;
-@synthesize viewportSouthwest;
-
 -(id) initWithDictionary:(NSDictionary*)geometry {
     if (! (self = [super init]))
         return nil;

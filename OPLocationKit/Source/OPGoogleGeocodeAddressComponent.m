@@ -17,10 +17,6 @@
 
 @implementation OPGoogleGeocodeAddressComponent
 
-@synthesize longName;
-@synthesize shortName;
-@synthesize types;
-
 -(id) initWithDictionary:(NSDictionary*)addressComponent {
     if (! (self = [super init]))
         return nil;

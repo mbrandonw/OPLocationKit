@@ -25,17 +25,6 @@
 
 @implementation OPFoursquareVenue
 
-@synthesize venueID;
-@synthesize name;
-@synthesize contact;
-@synthesize location;
-@synthesize categories;
-@synthesize verified;
-@synthesize statCheckinsCount;
-@synthesize statUsersCount;
-@synthesize statTipCount;
-@synthesize hereNowCount;
-
 -(id) initWithDictionary:(NSDictionary*)venue {
     if (! (self = [super init]))
         return nil;

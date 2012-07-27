@@ -48,20 +48,6 @@ const struct OPLocationCenterNotifications OPLocationCenterNotifications = {
 
 @implementation OPLocationCenter
 
-@synthesize geocodeOperation;
-@synthesize foursquareOperation;
-@synthesize manager;
-@synthesize geocodedResults;
-@synthesize geocodesLocation;
-@synthesize findsFoursquareVenues;
-@synthesize foursquareConsumerKey;
-@synthesize foursquareConsumerSecret;
-@synthesize foursquareVenues;
-@synthesize horizontalAccuracyThreshold;
-@synthesize timestampAccuracyThreshold;
-@synthesize accuracySearchTimeInterval;
-@synthesize updatingLocation = _updatingLocation;
-
 #pragma mark Singleton methods
 OP_SYNTHESIZE_SINGLETON_FOR_CLASS(OPLocationCenter, sharedLocationCenter)
 #pragma mark -
@@ -73,22 +59,22 @@ OP_SYNTHESIZE_SINGLETON_FOR_CLASS(OPLocationCenter, sharedLocationCenter)
 		return nil;
     
 	// create and configure the location manager
-	manager = [[CLLocationManager alloc] init];
-	manager.delegate = self;
-	manager.desiredAccuracy = kCLLocationAccuracyBest;
+	_manager = [[CLLocationManager alloc] init];
+	_manager.delegate = self;
+	_manager.desiredAccuracy = kCLLocationAccuracyBest;
     
     // how much accuracy do we want before sending out notifications?
-    horizontalAccuracyThreshold = 200.0f;       // ~ 1 city block
+    _horizontalAccuracyThreshold = 200.0f;       // ~ 1 city block
 
     // how old of a cached coordinate are we willing to deal with?
 #ifdef DEBUG
-    timestampAccuracyThreshold = 10.0f;         // 10 seconds
+    _timestampAccuracyThreshold = 10.0f;         // 10 seconds
 #else
     timestampAccuracyThreshold = 60.0f * 10.0f; // 10 minutes
 #endif
 
     // kill location search after some time
-    accuracySearchTimeInterval = 30.0f;         // 30 secs
+    _accuracySearchTimeInterval = 30.0f;         // 30 secs
 	
 	return self;
 }

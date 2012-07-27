@@ -23,16 +23,6 @@
 
 @implementation OPFoursquareVenueLocation
 
-@synthesize address;
-@synthesize crossStreet;
-@synthesize latitude;
-@synthesize longitude;
-@synthesize distance;
-@synthesize postalCode;
-@synthesize city;
-@synthesize state;
-@synthesize country;
-
 -(id) initWithDictionary:(NSDictionary*)location {
     if (! (self = [super init]))
         return nil;

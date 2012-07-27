@@ -48,11 +48,6 @@ NSString* const OPGoogleGeocodeTypeRoom                         = @"room";
 
 @implementation OPGoogleGeocodeResult
 
-@synthesize addressComponents;
-@synthesize formattedAddress;
-@synthesize geometry;
-@synthesize types;
-
 -(id) initWithDictionary:(NSDictionary*)result {
     if (! (self = [super init]))
         return nil;
