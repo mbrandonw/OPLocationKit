@@ -15,5 +15,6 @@ Pod::Spec.new do |s|
   s.dependency 'BlocksKit', '~> 1.0.1'
   s.dependency 'AFNetworking', '~> 0.7.0'
   s.dependency 'OPExtensionKit', :git => 'git@github.com:mbrandonw/OPExtensionKit.git'
+  s.dependency 'OPEnumerable', :git => 'git@github.com:mbrandonw/OPEnumerable.git'
 
 end

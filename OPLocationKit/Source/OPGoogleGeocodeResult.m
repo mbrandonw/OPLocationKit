@@ -12,6 +12,7 @@
 #import "NSDictionary+Opetopic.h"
 #import "NSArray+Opetopic.h"
 #import "NSObject+Opetopic.h"
+#import "OPEnumerable.h"
 
 NSString* const OPGoogleGeocodeTypeStreetAddress                = @"street_address";
 NSString* const OPGoogleGeocodeTypeRoute                        = @"route";

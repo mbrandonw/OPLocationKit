@@ -16,6 +16,7 @@
 #import "NSCache+Opetopic.h"
 #import "NSObject+Opetopic.h"
 #import "OPMacros.h"
+#import "OPEnumerable.h"
 
 #import "OPGoogleGeocodeResult.h"
 #import "OPFoursquareVenue.h"
