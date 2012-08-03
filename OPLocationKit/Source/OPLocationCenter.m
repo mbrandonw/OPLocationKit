@@ -8,13 +8,13 @@
 
 #import "OPLocationCenter.h"
 #import "NSArray+Opetopic.h"
-#import "BlocksKit.h"
 #import "GCD+Opetopic.h"
 #import "AFJSONRequestOperation.h"
 #import "NSDictionary+Opetopic.h"
 #import "NSArray+Opetopic.h"
 #import "NSString+Opetopic.h"
 #import "NSCache+Opetopic.h"
+#import "NSObject+Opetopic.h"
 #import "OPMacros.h"
 
 #import "OPGoogleGeocodeResult.h"
@@ -214,7 +214,7 @@ OP_SYNTHESIZE_SINGLETON_FOR_CLASS(OPLocationCenter, sharedLocationCenter)
     if ([self.geocodedResults count] == 0)
         return nil;
     
-    return [[NSCache sharedCache] objectForKey:[NSString stringWithFormat:@"OPLocationCenter/neighborhoodResults/%p", self.geocodedResults] withGetter:^id(void){
+    return [[NSCache sharedCache] fetch:[NSString stringWithFormat:@"OPLocationCenter/neighborhoodResults/%p", self.geocodedResults] :^id(void){
         
         NSArray *neighborhoods = [self.geocodedResults select:^BOOL(id obj) {
             
