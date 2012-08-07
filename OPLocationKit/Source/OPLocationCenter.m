@@ -71,7 +71,7 @@ OP_SYNTHESIZE_SINGLETON_FOR_CLASS(OPLocationCenter, sharedLocationCenter)
 #ifdef DEBUG
     _timestampAccuracyThreshold = 10.0f;         // 10 seconds
 #else
-    timestampAccuracyThreshold = 60.0f * 10.0f; // 10 minutes
+    _timestampAccuracyThreshold = 60.0f * 10.0f; // 10 minutes
 #endif
 
     // kill location search after some time
