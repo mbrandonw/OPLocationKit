@@ -215,7 +215,7 @@ OP_SYNTHESIZE_SINGLETON_FOR_CLASS(OPLocationCenter, sharedLocationCenter)
     if ([self.geocodedResults count] == 0)
         return nil;
     
-    return [[NSCache sharedCache] fetch:[NSString stringWithFormat:@"OPLocationCenter/neighborhoodResults/%p", self.geocodedResults] :^id(void){
+    return [[NSCache sharedCache] fetch:[NSString stringWithFormat:@"OPLocationCenter/neighborhoodResults/%p", self.geocodedResults] do:^id(void){
         
         NSArray *neighborhoods = [self.geocodedResults findAll:^BOOL(id obj) {
             
