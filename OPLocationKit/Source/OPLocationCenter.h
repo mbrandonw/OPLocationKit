@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import "OPMacros.h"
 
 extern const struct OPLocationCenterNotifications {
     __unsafe_unretained NSString *started;
@@ -21,6 +22,8 @@ extern const struct OPLocationCenterNotifications {
 } OPLocationCenterNotifications;
 
 @interface OPLocationCenter : NSObject
+
+OP_SINGLETON_HEADER_FOR(OPLocationCenter, sharedLocationCenter);
 
 @property (nonatomic, retain, readonly) CLLocationManager *manager;
 
@@ -36,9 +39,6 @@ extern const struct OPLocationCenterNotifications {
 @property (nonatomic, assign) BOOL geocodesLocation;                            // should we geocode the location once we get a coordinate?
 @property (nonatomic, retain, readonly) NSArray *geocodedResults;               // array of OPGoogleGeocodeResult objects
 @property (nonatomic, readonly) NSArray *neighborhoodResults;                   // array of OPGoogleGeocodeResult objects that represent "neighborhoods"
-
-// singleton methods
-+(OPLocationCenter*) sharedLocationCenter;
 
 // methods for grabbing location
 -(void) pingLocation;

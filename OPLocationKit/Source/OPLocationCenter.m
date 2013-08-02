@@ -15,7 +15,6 @@
 #import "NSString+Opetopic.h"
 #import "NSCache+Opetopic.h"
 #import "NSObject+Opetopic.h"
-#import "OPMacros.h"
 #import "OPEnumerable.h"
 
 #import "OPGoogleGeocodeResult.h"
@@ -50,7 +49,7 @@ const struct OPLocationCenterNotifications OPLocationCenterNotifications = {
 @implementation OPLocationCenter
 
 #pragma mark Singleton methods
-OP_SYNTHESIZE_SINGLETON_FOR_CLASS(OPLocationCenter, sharedLocationCenter)
+OP_SINGLETON_IMPLEMENTATION_FOR(OPLocationCenter, sharedLocationCenter)
 #pragma mark -
 
 
