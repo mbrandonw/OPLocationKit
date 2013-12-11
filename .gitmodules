@@ -3,7 +3,7 @@
 	url = https://github.com/AFNetworking/AFNetworking.git
 [submodule "OPLocationKit/opextensionkit"]
 	path = OPLocationKit/opextensionkit
-	url = git@brandonwilliams.beanstalkapp.com:/opextensionkit.git
+	url = https://github.com/mbrandonw/OPExtensionKit.git
 [submodule "OPLocationKit/JSONKit"]
 	path = OPLocationKit/JSONKit
 	url = https://github.com/johnezang/JSONKit.git
