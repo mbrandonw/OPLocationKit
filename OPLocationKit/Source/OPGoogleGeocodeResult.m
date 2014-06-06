@@ -77,19 +77,19 @@ NSString* const OPGoogleGeocodeTypeRoom                         = @"room";
 
 -(NSString*) address {
     
-    NSString *streetAddress = [[self.addressComponents find:^BOOL(id obj) {
-        return [[obj types] containsObject:OPGoogleGeocodeTypeStreetAddress];
+    NSString *streetAddress = [[self.addressComponents find:^BOOL(OPGoogleGeocodeAddressComponent *component) {
+        return [component.types containsObject:OPGoogleGeocodeTypeStreetAddress];
     }] longName];
     
     if (streetAddress)
         return streetAddress;
     
-    NSString *streetNumber = [[self.addressComponents find:^BOOL(id obj) {
-        return [[obj types] containsObject:OPGoogleGeocodeTypeStreetNumber];
+    NSString *streetNumber = [[self.addressComponents find:^BOOL(OPGoogleGeocodeAddressComponent *component) {
+        return [component.types containsObject:OPGoogleGeocodeTypeStreetNumber];
     }] longName];
     
-    NSString *route = [[self.addressComponents find:^BOOL(id obj) {
-        return [[obj types] containsObject:OPGoogleGeocodeTypeRoute];
+    NSString *route = [[self.addressComponents find:^BOOL(OPGoogleGeocodeAddressComponent *component) {
+        return [component.types containsObject:OPGoogleGeocodeTypeRoute];
     }] longName];
     
     return [NSString stringWithFormat:@"%@ %@", streetNumber, route];
@@ -97,37 +97,37 @@ NSString* const OPGoogleGeocodeTypeRoom                         = @"room";
 
 -(NSString*) neighborhood:(BOOL)short_ {
     
-    return [[self.addressComponents find:^BOOL(id obj) {
-        return [[obj types] containsAnObjectIn:@[OPGoogleGeocodeTypeNeighborhood, OPGoogleGeocodeTypeSublocality, OPGoogleGeocodeTypeLocality, OPGoogleGeocodeTypeAdministrativeAreaLevel1, OPGoogleGeocodeTypeAdministrativeAreaLevel2]];
+    return [[self.addressComponents find:^BOOL(OPGoogleGeocodeAddressComponent *component) {
+        return [component.types containsAnObjectIn:@[OPGoogleGeocodeTypeNeighborhood, OPGoogleGeocodeTypeSublocality, OPGoogleGeocodeTypeLocality, OPGoogleGeocodeTypeAdministrativeAreaLevel1, OPGoogleGeocodeTypeAdministrativeAreaLevel2]];
     }] performSelector:short_ ? @selector(shortName) : @selector(longName)];
     
 }
 
 -(NSString*) city:(BOOL)short_ {
     
-    return [[self.addressComponents find:^BOOL(id obj) {
-        return [[obj types] containsAnObjectIn:@[OPGoogleGeocodeTypeLocality, OPGoogleGeocodeTypeAdministrativeAreaLevel2]];
+    return [[self.addressComponents find:^BOOL(OPGoogleGeocodeAddressComponent *component) {
+        return [component.types containsAnObjectIn:@[OPGoogleGeocodeTypeLocality, OPGoogleGeocodeTypeAdministrativeAreaLevel2]];
     }] performSelector:short_ ? @selector(shortName) : @selector(longName)];
 }
 
 -(NSString*) state:(BOOL)short_ {
     
-    return [[self.addressComponents find:^BOOL(id obj) {
-        return [[obj types] containsObject:OPGoogleGeocodeTypeAdministrativeAreaLevel1];
+    return [[self.addressComponents find:^BOOL(OPGoogleGeocodeAddressComponent *component) {
+        return [component.types containsObject:OPGoogleGeocodeTypeAdministrativeAreaLevel1];
     }] performSelector:short_ ? @selector(shortName) : @selector(longName)];
 }
 
 -(NSString*) postalCode:(BOOL)short_ {
     
-    return [[self.addressComponents find:^BOOL(id obj) {
-        return [[obj types] containsObject:OPGoogleGeocodeTypePostalCode];
+    return [[self.addressComponents find:^BOOL(OPGoogleGeocodeAddressComponent *component) {
+        return [component.types containsObject:OPGoogleGeocodeTypePostalCode];
     }] performSelector:short_ ? @selector(shortName) : @selector(longName)];
 }
 
 -(NSString*) country:(BOOL)short_ {
     
-    return [[self.addressComponents find:^BOOL(id obj) {
-        return [[obj types] containsObject:OPGoogleGeocodeTypeCountry];
+    return [[self.addressComponents find:^BOOL(OPGoogleGeocodeAddressComponent *component) {
+        return [component.types containsObject:OPGoogleGeocodeTypeCountry];
     }] performSelector:short_ ? @selector(shortName) : @selector(longName)];
 }
 
