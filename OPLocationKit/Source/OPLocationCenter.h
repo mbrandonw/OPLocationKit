@@ -11,14 +11,13 @@
 #import "OPMacros.h"
 
 extern const struct OPLocationCenterNotifications {
-    __unsafe_unretained NSString *started;
-	__unsafe_unretained NSString *update;
-    __unsafe_unretained NSString *ended;
-    
-	__unsafe_unretained NSString *error;
-    
-	__unsafe_unretained NSString *googleGeocode;
-	__unsafe_unretained NSString *foursquareVenues;
+  __unsafe_unretained NSString *started;
+  __unsafe_unretained NSString *update;
+  __unsafe_unretained NSString *ended;
+
+  __unsafe_unretained NSString *error;
+
+  __unsafe_unretained NSString *googleGeocode;
 } OPLocationCenterNotifications;
 
 @interface OPLocationCenter : NSObject
@@ -31,11 +30,6 @@ OP_SINGLETON_HEADER_FOR(OPLocationCenter, sharedLocationCenter);
 @property (nonatomic, assign) NSTimeInterval timestampAccuracyThreshold;        // how old of coordinates are we willing to accept?
 @property (nonatomic, assign) NSTimeInterval accuracySearchTimeInterval;        // how long are we willing to leave GPS turned on while we search for a location
 
-@property (nonatomic, retain) NSString *foursquareConsumerKey;                  // consumer key needed to hit foursquare's api
-@property (nonatomic, retain) NSString *foursquareConsumerSecret;               // consumer key needed to hit foursquare's api
-@property (nonatomic, assign) BOOL findsFoursquareVenues;                       // should we grab foursquare venues once we get a coordinate?
-@property (nonatomic, retain, readonly) NSArray *foursquareVenues;              // array of OPFoursquareVenue objects
-
 @property (nonatomic, assign) BOOL geocodesLocation;                            // should we geocode the location once we get a coordinate?
 @property (nonatomic, retain, readonly) NSArray *geocodedResults;               // array of OPGoogleGeocodeResult objects
 @property (nonatomic, readonly) NSArray *neighborhoodResults;                   // array of OPGoogleGeocodeResult objects that represent "neighborhoods"
@@ -44,9 +38,7 @@ OP_SINGLETON_HEADER_FOR(OPLocationCenter, sharedLocationCenter);
 -(void) pingLocation;
 -(void) stopLocation;
 
-// geocoding and venue methods
+// geocoding methods
 -(void) loadGeocodedResults;
--(void) loadFoursquareVenues;
--(void) loadFoursquareVenuesWithQuery:(NSString*)query;
 
 @end
