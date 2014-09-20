@@ -4,9 +4,3 @@
 [submodule "OPLocationKit/opextensionkit"]
 	path = OPLocationKit/opextensionkit
 	url = https://github.com/mbrandonw/OPExtensionKit.git
-[submodule "OPLocationKit/JSONKit"]
-	path = OPLocationKit/JSONKit
-	url = https://github.com/johnezang/JSONKit.git
-[submodule "OPLocationKit/BlocksKit"]
-	path = OPLocationKit/BlocksKit
-	url = https://github.com/zwaldowski/BlocksKit.git
