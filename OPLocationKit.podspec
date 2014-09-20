@@ -8,9 +8,5 @@ Pod::Spec.new do |spec|
   spec.source       = { git: 'https://github.com/mbrandonw/OPLocationKit.git' }
   spec.source_files = 'OPLocationKit/Source/**/*.{h,m}'
   spec.frameworks = 'CoreLocation'
-
-  spec.dependency 'AFNetworking', '~> 1.1'
-  spec.dependency 'OPEnumerable'
-
   spec.requires_arc = true
 end

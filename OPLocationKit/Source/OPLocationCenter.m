@@ -7,42 +7,41 @@
 //
 
 #import "OPLocationCenter.h"
-#import "NSArray+Opetopic.h"
-#import "GCD+Opetopic.h"
-#import "AFJSONRequestOperation.h"
-#import "NSDictionary+Opetopic.h"
-#import "NSArray+Opetopic.h"
-#import "NSString+Opetopic.h"
-#import "NSCache+Opetopic.h"
-#import "NSObject+Opetopic.h"
+//#import "NSArray+Opetopic.h"
+//#import "GCD+Opetopic.h"
+//#import "AFJSONRequestOperation.h"
+//#import "NSDictionary+Opetopic.h"
+//#import "NSArray+Opetopic.h"
+//#import "NSString+Opetopic.h"
+//#import "NSCache+Opetopic.h"
+//#import "NSObject+Opetopic.h"
 #import "OPEnumerable.h"
-#import "OPGoogleGeocodeResult.h"
-
-#define kGoogleGeocodingStatusOK                @"OK"
-#define kGoogleGeocodingStatusZeroResults       @"ZERO_RESULTS"
-#define kGoogleGeocodingStatusOverQueryLimit    @"OVER_QUERY_LIMIT"
-#define kGoogleGeocodingStatusRequestDenied     @"REQUEST_DENIED"
-#define kGoogleGeocodingStatusInvalidRequest    @"INVALID_REQUEST"
 
 const struct OPLocationCenterNotifications OPLocationCenterNotifications = {
   .error = @"OPLocationCenterNotifications.error",
   .started = @"OPLocationCenterNotifications.started",
   .update = @"OPLocationCenterNotifications.update",
   .ended = @"OPLocationCenterNotifications.ended",
-  .googleGeocode = @"OPLocationCenterNotifications.googleGeocode",
 };
 
 @interface OPLocationCenter (/**/) <CLLocationManagerDelegate>
-@property (nonatomic, retain) AFJSONRequestOperation *geocodeOperation;
 @property (nonatomic, retain, readwrite) CLLocationManager *manager;
-@property (nonatomic, retain, readwrite) NSArray *geocodedResults;
 @property (nonatomic, assign, getter=isUpdatingLocation) BOOL updatingLocation;
 @end
 
 @implementation OPLocationCenter
 
 #pragma mark Singleton methods
-OP_SINGLETON_IMPLEMENTATION_FOR(OPLocationCenter, sharedLocationCenter)
+static OPLocationCenter *_sharedLocationCenter = nil;
+static dispatch_once_t _onceToken = 0;
++(instancetype) sharedLocationCenter {
+  dispatch_once(&_onceToken, ^{
+    if (! _sharedLocationCenter) {
+      _sharedLocationCenter = [[[self class] alloc] init];
+    }
+  });
+  return _sharedLocationCenter;
+}
 #pragma mark -
 
 
@@ -86,7 +85,7 @@ OP_SINGLETON_IMPLEMENTATION_FOR(OPLocationCenter, sharedLocationCenter)
     self.updatingLocation = YES;
 
     // turn of GPS after some time
-    dispatch_after_delay(self.accuracySearchTimeInterval, ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.accuracySearchTimeInterval * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
       [self stopLocation];
     });
   }
@@ -116,14 +115,6 @@ OP_SINGLETON_IMPLEMENTATION_FOR(OPLocationCenter, sharedLocationCenter)
 
   // let all interested parties know that we obtained a new location coordinate
   [[NSNotificationCenter defaultCenter] postNotificationName:OPLocationCenterNotifications.update object:nil];
-
-
-  // check if we should geocode our location
-  if (self.geocodesLocation)
-  {
-    [self loadGeocodedResults];
-  }
-
 }
 
 -(void) locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
@@ -134,52 +125,5 @@ OP_SINGLETON_IMPLEMENTATION_FOR(OPLocationCenter, sharedLocationCenter)
                                                     userInfo:@{@"error": error}];
 }
 #pragma mark -
-
-
-#pragma mark geocoding methods
--(void) loadGeocodedResults {
-
-  // build the API call for google
-  NSString *urlString = [NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/json?latlng=%f,%f&sensor=true", self.manager.location.coordinate.latitude, self.manager.location.coordinate.longitude];
-
-  // stop previous geocoding request, and start a fresh one
-  [self.geocodeOperation cancel];
-  self.geocodeOperation =
-  [AFJSONRequestOperation
-   JSONRequestOperationWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlString]]
-   success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-
-     self.geocodedResults = [[JSON arrayForKey:@"results"] map:^id(id obj) {
-       return [[OPGoogleGeocodeResult alloc] initWithDictionary:obj];
-     }];
-
-     [[NSNotificationCenter defaultCenter] postNotificationName:OPLocationCenterNotifications.googleGeocode object:nil];
-
-   } failure:nil];
-  [self.geocodeOperation start];
-}
-#pragma mark -
-
-
-#pragma mark Custom getters
--(NSArray*) neighborhoodResults {
-
-  if ([self.geocodedResults count] == 0)
-    return nil;
-
-  return [[NSCache sharedCache] fetch:[NSString stringWithFormat:@"OPLocationCenter/neighborhoodResults/%p", self.geocodedResults] do:^id(void){
-
-    NSArray *neighborhoods = [self.geocodedResults findAll:^BOOL(id obj) {
-
-      OPGoogleGeocodeResult *result = (OPGoogleGeocodeResult*)obj;
-
-      // neighborhoods are the results that are of specific types
-      return [result.types containsAnObjectIn:@[OPGoogleGeocodeTypeNeighborhood, OPGoogleGeocodeTypeSublocality, OPGoogleGeocodeTypeAdministrativeAreaLevel2, OPGoogleGeocodeTypeColloquialArea]];
-
-    }];
-
-    return neighborhoods ? neighborhoods : @[];
-  }];
-}
 
 @end
