@@ -1,20 +1,16 @@
-Pod::Spec.new do |s|
-  s.name     = 'OPLocationKit'
-  s.version  = '1.0.0'
-  s.license  = 'MIT'
-  
-  s.summary  = 'Sweet location stuffs.'
-  s.homepage = 'https://github.com/mbrandonw/OPLocationKit'
-  s.author   = { 'Brandon Williams' => 'brandon@opetopic.com' }
-  s.source   = { :git => 'git@github.com:mbrandonw/OPLocationKit.git' }
-  
-  s.source_files = 'OPLocationKit/Source/**/*.{h,m}'
-  
-  s.frameworks = 'CoreLocation'
-  
-  s.dependency 'BlocksKit', '~> 1.0.1'
-  s.dependency 'AFNetworking', '~> 0.7.0'
-  s.dependency 'OPExtensionKit', :git => 'git@github.com:mbrandonw/OPExtensionKit.git'
-  s.dependency 'OPEnumerable', :git => 'git@github.com:mbrandonw/OPEnumerable.git'
+Pod::Spec.new do |spec|
+  spec.name         = 'OPLocationKit'
+  spec.version      = '0.1.0'
+  spec.license      = { type: 'BSD' }
+  spec.homepage     = 'https://github.com/mbrandonw/OPLocationKit'
+  spec.authors      = { 'Brandon Williams' => 'mbw234@gmail.com' }
+  spec.summary      = ''
+  spec.source       = { git: 'https://github.com/mbrandonw/OPLocationKit.git' }
+  spec.source_files = 'OPLocationKit/Source/**/*.{h,m}'
+  spec.frameworks = 'CoreLocation'
 
+  spec.dependency 'AFNetworking', '~> 1.1'
+  spec.dependency 'OPEnumerable'
+
+  spec.requires_arc = true
 end
