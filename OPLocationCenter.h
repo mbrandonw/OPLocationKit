@@ -6,8 +6,8 @@
 //  Copyright 2011 Opetopic. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <CoreLocation/CoreLocation.h>
+@import Foundation;
+@import CoreLocation;
 
 extern const struct OPLocationCenterNotifications {
   __unsafe_unretained NSString *started;

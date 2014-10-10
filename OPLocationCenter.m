@@ -7,15 +7,6 @@
 //
 
 #import "OPLocationCenter.h"
-//#import "NSArray+Opetopic.h"
-//#import "GCD+Opetopic.h"
-//#import "AFJSONRequestOperation.h"
-//#import "NSDictionary+Opetopic.h"
-//#import "NSArray+Opetopic.h"
-//#import "NSString+Opetopic.h"
-//#import "NSCache+Opetopic.h"
-//#import "NSObject+Opetopic.h"
-#import "OPEnumerable.h"
 
 const struct OPLocationCenterNotifications OPLocationCenterNotifications = {
   .error = @"OPLocationCenterNotifications.error",
@@ -75,11 +66,17 @@ static dispatch_once_t _onceToken = 0;
 
 #pragma mark Methods for grabbing location
 -(void) pingLocation {
+  if (! CLLocationManager.locationServicesEnabled) {
+    return;
+  }
 
-  if ([CLLocationManager locationServicesEnabled])
-  {
-    if (! self.updatingLocation)
-      [[NSNotificationCenter defaultCenter] postNotificationName:OPLocationCenterNotifications.started object:nil];
+  if ([self.manager respondsToSelector:@selector(requestWhenInUseAuthorization)] &&
+      CLLocationManager.authorizationStatus == kCLAuthorizationStatusNotDetermined) {
+
+    [self.manager requestWhenInUseAuthorization];
+
+  } else if (! self.updatingLocation) {
+    [[NSNotificationCenter defaultCenter] postNotificationName:OPLocationCenterNotifications.started object:nil];
 
     [self.manager startUpdatingLocation];
     self.updatingLocation = YES;
@@ -93,11 +90,11 @@ static dispatch_once_t _onceToken = 0;
 
 -(void) stopLocation {
 
-  if (self.updatingLocation)
+  if (self.updatingLocation) {
     [[NSNotificationCenter defaultCenter] postNotificationName:OPLocationCenterNotifications.ended object:nil];
-
-  [self.manager stopUpdatingLocation];
-  self.updatingLocation = NO;
+    [self.manager stopUpdatingLocation];
+    self.updatingLocation = NO;
+  }
 }
 #pragma mark -
 
@@ -115,6 +112,12 @@ static dispatch_once_t _onceToken = 0;
 
   // let all interested parties know that we obtained a new location coordinate
   [[NSNotificationCenter defaultCenter] postNotificationName:OPLocationCenterNotifications.update object:nil];
+}
+
+-(void) locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+  if (status == kCLAuthorizationStatusAuthorizedWhenInUse) {
+    [self pingLocation];
+  }
 }
 
 -(void) locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
